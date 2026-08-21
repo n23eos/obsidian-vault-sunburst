@@ -1,0 +1,220 @@
+.vault-sunburst {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px 12px 12px;
+}
+
+/* ---------------------------------------------------------------- header */
+
+.vd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+}
+
+.vd-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  min-height: 28px;
+}
+
+.vd-crumb {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 2px 6px;
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--font-ui-small);
+}
+
+.vd-crumb:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.vd-crumb.is-current {
+  color: var(--text-normal);
+  font-weight: 600;
+  cursor: default;
+}
+
+.vd-crumb-sep {
+  color: var(--text-faint);
+  font-size: var(--font-ui-small);
+}
+
+.vd-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vd-seg {
+  display: flex;
+  background: var(--background-secondary);
+  border-radius: var(--radius-m);
+  padding: 2px;
+}
+
+.vd-seg-btn {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: calc(var(--radius-m) - 2px);
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.vd-seg-btn.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.vd-seg-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.vd-icon-btn {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 5px;
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.vd-icon-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+/* ----------------------------------------------------------------- chart */
+
+.vd-chart {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.vd-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.vd-arc {
+  stroke: var(--background-primary);
+  stroke-width: 0.5;
+  transition: opacity 0.18s ease, filter 0.18s ease, transform 0.18s ease;
+  transform-origin: 0 0;
+}
+
+.vd-arc.vd-clickable {
+  cursor: pointer;
+}
+
+.vd-svg.vd-animating .vd-arc {
+  transition: none;
+  pointer-events: none;
+}
+
+.vd-svg.vd-has-hover .vd-arc:not(.vd-hl) {
+  opacity: 0.55;
+}
+
+.vd-arc.vd-hl {
+  filter: brightness(1.1) saturate(1.15);
+}
+
+/* Pop the directly hovered sector slightly outward from the center. */
+.vd-arc.vd-hl:hover {
+  transform: scale(1.025);
+}
+
+.vd-center-circle {
+  fill: var(--background-secondary);
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.vd-center:hover .vd-center-circle {
+  fill: var(--background-modifier-hover);
+}
+
+.vd-center text {
+  text-anchor: middle;
+  fill: var(--text-normal);
+  pointer-events: none;
+  font-family: var(--font-interface);
+}
+
+.vd-center-name {
+  fill: var(--text-muted);
+}
+
+.vd-center-value {
+  font-weight: 700;
+}
+
+.vd-center-meta {
+  fill: var(--text-muted);
+}
+
+/* --------------------------------------------------------------- tooltip */
+
+.vd-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+  padding: 6px 10px;
+  max-width: 280px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 10;
+}
+
+.vd-tooltip.is-visible {
+  opacity: 1;
+}
+
+.vd-tip-name {
+  font-weight: 600;
+  font-size: var(--font-ui-small);
+  overflow-wrap: anywhere;
+}
+
+.vd-tip-meta {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.vd-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: var(--font-ui-medium);
+  pointer-events: none;
+}

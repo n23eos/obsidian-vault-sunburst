@@ -1,0 +1,10 @@
+{
+  "id": "vault-sunburst",
+  "name": "Vault Sunburst: Disk Usage & Word Count",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Interactive DaisyDisk-style sunburst chart of your vault. See folder sizes (disk usage), word counts and file counts at a glance. Animated zoom, 13 languages.",
+  "author": "n23eos",
+  "authorUrl": "https://github.com/n23eos",
+  "isDesktopOnly": false
+}

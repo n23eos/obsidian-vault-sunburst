@@ -1,0 +1,21 @@
+{
+  "name": "vault-sunburst",
+  "version": "1.0.0",
+  "description": "DaisyDisk-style interactive sunburst chart of your Obsidian vault",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "test": "vitest run"
+  },
+  "keywords": ["obsidian", "plugin", "sunburst", "daisydisk"],
+  "author": "nickeo23",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.9"
+  }
+}
