@@ -351,14 +351,6 @@ export function resolveLocale(raw: string | null | undefined): LocaleCode {
   return SUPPORTED.includes(base) ? base : "en";
 }
 
-export function detectLocale(): LocaleCode {
-  try {
-    return resolveLocale(window.localStorage.getItem("language"));
-  } catch {
-    return "en";
-  }
-}
-
 export function strings(locale: LocaleCode): LocaleStrings {
   return LOCALES[locale];
 }

@@ -12,7 +12,8 @@ import {
 import { REST_COLOR, arcColor } from "./color";
 import { formatBytes, formatPercent } from "./format";
 import { TAU, arcPath, clamp, easeInOutCubic, lerp } from "./geometry";
-import { LocaleCode, LocaleStrings, detectLocale, formatCount, strings } from "./i18n";
+import { LocaleCode, LocaleStrings, formatCount, strings } from "./i18n";
+import { detectLocale } from "./locale";
 import { Layout, computeLayout, metricValue, pathDepth } from "./layout";
 import type VaultDaisyPlugin from "./main";
 import { AngleLookup, RenderArc, collectArcs } from "./render";
@@ -81,7 +82,7 @@ export class DaisyView extends ItemView {
   }
 
   getDisplayText(): string {
-    return "Vault Sunburst";
+    return "Vault sunburst";
   }
 
   getIcon(): string {
@@ -344,13 +345,13 @@ export class DaisyView extends ItemView {
       const t = clamp((now - start) / durationMs, 0, 1);
       frame(easeInOutCubic(t));
       if (t < 1) {
-        requestAnimationFrame(tick);
+        window.requestAnimationFrame(tick);
       } else {
         this.svg.classList.remove("vd-animating");
         onDone?.();
       }
     };
-    requestAnimationFrame(tick);
+    window.requestAnimationFrame(tick);
   }
 
   private playIntro(): void {

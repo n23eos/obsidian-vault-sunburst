@@ -1,21 +1,31 @@
 {
   "name": "vault-sunburst",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Interactive sunburst chart of your Obsidian vault: disk usage, word counts and file counts by folder",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "lint": "eslint src",
     "test": "vitest run"
   },
-  "keywords": ["obsidian", "plugin", "sunburst", "daisydisk"],
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "sunburst",
+    "daisydisk"
+  ],
   "author": "nickeo23",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^20.14.0",
     "esbuild": "^0.24.0",
+    "eslint": "^10.8.1",
+    "eslint-plugin-obsidianmd": "^0.4.1",
     "obsidian": "^1.7.2",
     "typescript": "^5.5.4",
+    "typescript-eslint": "^8.67.0",
     "vitest": "^2.1.9"
   }
 }

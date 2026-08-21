@@ -1,5 +1,6 @@
 import { App, Plugin, PluginSettingTab, Setting, WorkspaceLeaf } from "obsidian";
-import { LocaleStrings, detectLocale, strings } from "./i18n";
+import { LocaleStrings, strings } from "./i18n";
+import { detectLocale } from "./locale";
 import { DaisyView, VIEW_TYPE_DAISY } from "./view";
 
 export interface DaisySettings {
@@ -30,14 +31,15 @@ export default class VaultDaisyPlugin extends Plugin {
     });
 
     this.addCommand({
-      id: "open-vault-sunburst",
+      id: "open-chart",
       name: locale.cmdOpen,
       callback: () => void this.activateView(),
     });
   }
 
   async loadSettings(): Promise<void> {
-    this.settings = { ...DEFAULT_SETTINGS, ...((await this.loadData()) ?? {}) };
+    const stored = (await this.loadData()) as Partial<DaisySettings> | null;
+    this.settings = { ...DEFAULT_SETTINGS, ...(stored ?? {}) };
   }
 
   async saveSettings(): Promise<void> {
@@ -94,7 +96,6 @@ class DaisySettingTab extends PluginSettingTab {
         slider
           .setLimits(MIN_RINGS, MAX_RINGS, 1)
           .setValue(this.plugin.settings.ringCount)
-          .setDynamicTooltip()
           .onChange(async (value) => {
             this.plugin.settings = { ...this.plugin.settings, ringCount: value };
             await this.plugin.saveSettings();
