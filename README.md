@@ -1,6 +1,6 @@
-# Vault Sunburst - Disk Usage & Word Count
+# Vault Sunburst - Disk Usage
 
-A [DaisyDisk](https://daisydiskapp.com/)-style interactive sunburst chart for your [Obsidian](https://obsidian.md) vault. See at a glance which folders take up disk space, where your words live, and where your files pile up — then dive in with smooth animated zoom.
+An interactive sunburst chart for your [Obsidian](https://obsidian.md) vault, in the spirit of classic disk-usage analyzers. See at a glance which folders take up disk space, where your words live, and where your files pile up — then dive in with smooth animated zoom.
 
 ![Vault Sunburst — words mode, dark theme](screenshot.png)
 
