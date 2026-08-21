@@ -1,6 +1,6 @@
 {
   "name": "vault-sunburst",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Interactive sunburst chart of your Obsidian vault: disk usage, word counts and file counts by folder",
   "main": "main.js",
   "scripts": {
