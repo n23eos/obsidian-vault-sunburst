@@ -1,5 +1,12 @@
 # Vault Sunburst - Disk Usage
 
+[![Latest release](https://img.shields.io/github/v/release/n23eos/obsidian-vault-sunburst?label=release&color=7c3aed)](https://github.com/n23eos/obsidian-vault-sunburst/releases/latest)
+[![Stars](https://img.shields.io/github/stars/n23eos/obsidian-vault-sunburst?style=flat&color=f5a623)](https://github.com/n23eos/obsidian-vault-sunburst/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+> ### ⭐ Star this repo
+> If Vault Sunburst helps you make sense of your vault, [give it a star](https://github.com/n23eos/obsidian-vault-sunburst) — it takes a second and helps other Obsidian users find the plugin.
+
 An interactive sunburst chart for your [Obsidian](https://obsidian.md) vault, in the spirit of classic disk-usage analyzers. See at a glance which folders take up disk space, where your words live, and where your files pile up — then dive in with smooth animated zoom.
 
 ![Vault Sunburst — words mode, dark theme](screenshot.png)
@@ -64,3 +71,5 @@ The zoom is implemented the "zoomable sunburst" way: the angular layout is compu
 ## По-русски
 
 Интерактивная круговая диаграмма хранилища в стиле DaisyDisk: три режима (размер на диске / количество слов / количество файлов), анимированный зум по папкам, контекстное меню, автообновление, исключение папок и 13 языков интерфейса. Язык подхватывается из настроек Obsidian автоматически.
+
+⭐ Если плагин оказался полезен — [поставьте звезду репозиторию](https://github.com/n23eos/obsidian-vault-sunburst), так его найдут другие.
