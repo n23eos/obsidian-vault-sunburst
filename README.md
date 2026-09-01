@@ -4,10 +4,10 @@
 [![Stars](https://img.shields.io/github/stars/n23eos/obsidian-vault-sunburst?style=flat&color=f5a623)](https://github.com/n23eos/obsidian-vault-sunburst/stargazers)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
+**Vault Sunburst charts an entire Obsidian vault as an interactive sunburst, in the spirit of classic disk-usage analyzers.** One chart switches between three metrics: size on disk in bytes, word count in notes, and number of files. Clicking a folder flies into it with animated zoom, while the center, Esc or the breadcrumbs go back up and clicking a file opens it. Sectors morph when the metric changes, hovering highlights a folder together with all its descendants, and the DaisyDisk-style rainbow palette follows the on-screen angle in both light and dark themes. Available in 13 languages, on desktop and mobile.
+
 > ### ⭐ Star this repo
 > If Vault Sunburst helps you make sense of your vault, [give it a star](https://github.com/n23eos/obsidian-vault-sunburst) — it takes a second and helps other Obsidian users find the plugin.
-
-An interactive sunburst chart for your [Obsidian](https://obsidian.md) vault, in the spirit of classic disk-usage analyzers. See at a glance which folders take up disk space, where your words live, and where your files pile up — then dive in with smooth animated zoom.
 
 ![Vault Sunburst — words mode, dark theme](screenshot.png)
 
