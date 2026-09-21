@@ -74,6 +74,27 @@ The zoom is implemented the "zoomable sunburst" way: the angular layout is compu
 
 ⭐ Если плагин оказался полезен — [поставьте звезду репозиторию](https://github.com/n23eos/obsidian-vault-sunburst), так его найдут другие.
 
+## More projects
+
+### Obsidian plugins
+
+| Plugin | What it does |
+| --- | --- |
+| [Graph Insight](https://community.obsidian.md/plugins/graph-insight) | Explore large vaults as an interactive graph. |
+| [Always-on-Top Tasks](https://community.obsidian.md/plugins/tasks-for-focus-adhd) | Keep a note and its tasks in a focused floating overlay. |
+| [Column Explorer](https://community.obsidian.md/plugins/column-explorer) | Browse a vault with Finder-style Miller columns. |
+| [Vault Sunburst](https://community.obsidian.md/plugins/vault-sunburst) | Visualize folder sizes, word counts and file counts. |
+| [Vault Telegram Bridge](https://community.obsidian.md/plugins/vault-telegram-bridge) | Capture Telegram messages and media in an Obsidian vault. |
+
+### Browser extensions
+
+| Extension | What it does |
+| --- | --- |
+| [FloatPlayer - Picture in Picture](https://chromewebstore.google.com/detail/floatplayer-%E2%80%94-picture-in/colaiiadempclbkepfnojfggmpcadadg?authuser=0&hl=ru) | Keep YouTube video in a floating picture-in-picture player. |
+| [Eye Rest 20-20-20](https://chromewebstore.google.com/detail/eye-rest-20-20-20/gfffpnlfldimcjnkgleknfheojoncama?authuser=0&hl=ru) | Gentle 20-20-20 reminders for your eyes. |
+
 ## Поддержать проект
 
-[![Купить мне кофе](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/n23eos)
+Если плагин оказался полезен, можно поддержать его развитие:
+
+[![ETH](https://img.shields.io/badge/ETH-0x7777...88C4-blue?logo=ethereum&style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)[![Donate](https://img.shields.io/badge/donate-crypto-orange?style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)[![Купить мне кофе](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/n23eos)
