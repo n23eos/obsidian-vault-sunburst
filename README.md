@@ -97,4 +97,6 @@ The zoom is implemented the "zoomable sunburst" way: the angular layout is compu
 
 Если плагин оказался полезен, можно поддержать его развитие:
 
-[![ETH](https://img.shields.io/badge/ETH-0x7777...88C4-blue?logo=ethereum&style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)[![Donate](https://img.shields.io/badge/donate-crypto-orange?style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)[![Купить мне кофе](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/n23eos)
+[![ETH](https://img.shields.io/badge/ETH-0x7777...88C4-blue?logo=ethereum&style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)[![Donate](https://img.shields.io/badge/donate-crypto-orange?style=flat-square)](https://etherscan.io/address/0x77777da54702AC8789D53fc7cC6201C29a1A88C4)
+
+[![Купить мне кофе](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/n23eos)
