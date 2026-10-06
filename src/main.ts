@@ -1,4 +1,5 @@
 import { App, Plugin, PluginSettingTab, Setting, WorkspaceLeaf } from "obsidian";
+import type { SettingDefinitionItem } from "obsidian";
 import { LocaleStrings, strings } from "./i18n";
 import { detectLocale } from "./locale";
 import { DaisyView, VIEW_TYPE_DAISY } from "./view";
@@ -71,6 +72,52 @@ class DaisySettingTab extends PluginSettingTab {
     this.locale = locale;
   }
 
+  getSettingDefinitions(): SettingDefinitionItem[] {
+    return [
+      {
+        name: this.locale.settingExcluded,
+        desc: this.locale.settingExcludedDesc,
+        control: { type: "textarea", key: "excludedPaths", defaultValue: "", rows: 4 },
+      },
+      {
+        name: this.locale.settingRings,
+        desc: this.locale.settingRingsDesc,
+        control: {
+          type: "slider",
+          key: "ringCount",
+          defaultValue: DEFAULT_SETTINGS.ringCount,
+          min: MIN_RINGS,
+          max: MAX_RINGS,
+          step: 1,
+        },
+      },
+    ];
+  }
+
+  getControlValue(key: string): unknown {
+    if (key === "excludedPaths") return this.plugin.settings.excludedPaths.join("\n");
+    if (key === "ringCount") return this.plugin.settings.ringCount;
+    return undefined;
+  }
+
+  async setControlValue(key: string, value: unknown): Promise<void> {
+    if (key === "excludedPaths" && typeof value === "string") {
+      this.plugin.settings = {
+        ...this.plugin.settings,
+        excludedPaths: value.split("\n").map((path) => path.trim()).filter(Boolean),
+      };
+    } else if (key === "ringCount" && typeof value === "number" && Number.isFinite(value)) {
+      this.plugin.settings = {
+        ...this.plugin.settings,
+        ringCount: Math.min(MAX_RINGS, Math.max(MIN_RINGS, Math.round(value))),
+      };
+    } else {
+      return;
+    }
+    await this.plugin.saveSettings();
+  }
+
+  /** Imperative fallback for Obsidian versions before 1.13. */
   display(): void {
     this.containerEl.empty();
 
@@ -80,13 +127,7 @@ class DaisySettingTab extends PluginSettingTab {
       .addTextArea((text) => {
         text.inputEl.rows = 4;
         text.setValue(this.plugin.settings.excludedPaths.join("\n"));
-        text.onChange(async (value) => {
-          this.plugin.settings = {
-            ...this.plugin.settings,
-            excludedPaths: value.split("\n").map((s) => s.trim()).filter(Boolean),
-          };
-          await this.plugin.saveSettings();
-        });
+        text.onChange((value) => this.setControlValue("excludedPaths", value));
       });
 
     new Setting(this.containerEl)
@@ -96,10 +137,7 @@ class DaisySettingTab extends PluginSettingTab {
         slider
           .setLimits(MIN_RINGS, MAX_RINGS, 1)
           .setValue(this.plugin.settings.ringCount)
-          .onChange(async (value) => {
-            this.plugin.settings = { ...this.plugin.settings, ringCount: value };
-            await this.plugin.saveSettings();
-          });
+          .onChange((value) => this.setControlValue("ringCount", value));
       });
   }
 }

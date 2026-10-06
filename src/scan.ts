@@ -66,10 +66,10 @@ export async function countVaultWords(
       let words = 0;
       try {
         words = countWords(await vault.cachedRead(file));
+        cache.set(file.path, { mtime: file.stat.mtime, words });
       } catch (error) {
         console.error(`Vault Sunburst: failed to read ${file.path}`, error);
       }
-      cache.set(file.path, { mtime: file.stat.mtime, words });
       result.set(file.path, words);
     }
     done++;
